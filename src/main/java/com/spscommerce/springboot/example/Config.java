@@ -4,6 +4,8 @@ import com.spscommerce.shared.springboot.jaxrs.JerseyConfig;
 import com.spscommerce.springboot.example.model.ExampleBean;
 import com.spscommerce.springboot.example.controller.ExampleController;
 import org.glassfish.jersey.server.ResourceConfig;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -25,16 +27,30 @@ import org.springframework.context.annotation.Import;
 @Import(JerseyConfig.class)
 public class Config {
 
+    private static final Logger logger = LoggerFactory.getLogger(ExampleController.class);
     private final String testProp;
+    private final String docServiceApiKey;
+    private final String userServiceApiKey;
 
     @Autowired
-    public Config(@Value("${test.prop}") String testProp) {
+    public Config(@Value("${test.prop}") String testProp, @Value("${documentService.apiKey}") String docServiceApiKey, @Value("${userService.apiKey}") String userServiceApiKey) {
         this.testProp = testProp;
+        logger.info("Got our secret api key: " + docServiceApiKey);
+        this.docServiceApiKey = docServiceApiKey;
+        this.userServiceApiKey = userServiceApiKey;
     }
 
     @Bean
     public ExampleBean getExampleBean() {
         return new ExampleBean(testProp);
+    }
+
+    public String getDocServiceApiKey() {
+        return docServiceApiKey;
+    }
+
+    public String getUserServiceApiKey() {
+        return userServiceApiKey;
     }
 
     @Bean
