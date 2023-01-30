@@ -1,0 +1,27 @@
+# Ignore Gradle project-specific cache directory
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Ignore Gradle build output directory
+build
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+**/.DS_Store
+
+target/

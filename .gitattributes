@@ -1,0 +1,8 @@
+#
+# https://help.github.com/articles/dealing-with-line-endings/
+#
+# keep all text files to use LF endings
+* text=auto eol=lf
+# These are explicitly windows files and should use crlf
+*.bat           text eol=crlf
+

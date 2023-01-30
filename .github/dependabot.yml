@@ -1,0 +1,21 @@
+version: 2
+
+registries:
+  maven-jfrog-releases:
+    type: maven-repository
+    url: https://spscommerceinc.jfrog.io/artifactory/java-releases
+    username: ${{secrets.MAVEN_JFROG_USER_V1}}
+    password: ${{secrets.MAVEN_JFROG_PASS_V1}}
+
+updates:
+  - package-ecosystem: maven
+    directory: /
+    schedule:
+      interval: daily
+    registries:
+      - maven-jfrog-releases
+
+  - package-ecosystem: docker
+    directory: /
+    schedule:
+      interval: daily
