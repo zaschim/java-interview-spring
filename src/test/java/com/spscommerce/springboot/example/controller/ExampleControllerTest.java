@@ -1,4 +1,4 @@
-package com.spscommerce.springboot.example.resources;
+package com.spscommerce.springboot.example.controller;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.spscommerce.springboot.example.ExampleApplication;
@@ -19,14 +19,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
         classes = ExampleApplication.class,
         webEnvironment = WebEnvironment.RANDOM_PORT
 )
-class ExampleResourceTest {
+class ExampleControllerTest {
     private final WebTarget target;
 
     @LocalServerPort
     int port;
 
     @Autowired
-    public ExampleResourceTest(SelfClient client) {
+    public ExampleControllerTest(SelfClient client) {
         this.target = client.getSelfTarget();
     }
 

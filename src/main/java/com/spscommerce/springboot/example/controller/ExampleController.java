@@ -1,9 +1,12 @@
-package com.spscommerce.springboot.example.resources;
+package com.spscommerce.springboot.example.controller;
 
+import com.spscommerce.springboot.example.OpenApiDef;
 import com.spscommerce.springboot.example.model.ExampleBean;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,11 +18,13 @@ import javax.ws.rs.core.MediaType;
 @Path("/")
 @Service
 @Tag(name = OpenApiDef.Group.EXAMPLE)
-public class ExampleResource {
+public class ExampleController {
+
+    private static final Logger logger = LoggerFactory.getLogger(ExampleController.class);
     private final ExampleBean exampleBean;
 
     @Autowired
-    public ExampleResource(
+    public ExampleController(
             ExampleBean exampleBean
     ) {
         this.exampleBean = exampleBean;
@@ -53,6 +58,7 @@ public class ExampleResource {
             }
     )
     public ExampleBean getExampleBean() {
+        logger.info("Request for ExampleBean.");
         return exampleBean;
     }
 }

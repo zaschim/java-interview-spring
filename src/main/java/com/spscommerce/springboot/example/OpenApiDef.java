@@ -1,4 +1,4 @@
-package com.spscommerce.springboot.example.resources;
+package com.spscommerce.springboot.example;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Info;

@@ -2,7 +2,7 @@ package com.spscommerce.springboot.example;
 
 import com.spscommerce.shared.springboot.jaxrs.JerseyConfig;
 import com.spscommerce.springboot.example.model.ExampleBean;
-import com.spscommerce.springboot.example.resources.ExampleResource;
+import com.spscommerce.springboot.example.controller.ExampleController;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -40,6 +40,6 @@ public class Config {
     @Bean
     public ResourceConfig jersey() {
         return new ResourceConfig()
-            .register(ExampleResource.class);
+            .register(ExampleController.class);
     }
 }

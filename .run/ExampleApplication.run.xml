@@ -1,19 +1,22 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="ExampleApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <envs>
+      <env name="ENV" value="test" />
+    </envs>
     <module name="sps-java-shared-spring-boot-example" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.spscommerce.springboot.example.ExampleApplication" />
+    <option name="VM_PARAMETERS" value="-Djava.awt.headless=false" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="com.spscommerce.springboot.example.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>
-    <option name="SPRING_BOOT_MAIN_CLASS" value="com.spscommerce.springboot.example.ExampleApplication" />
-    <option name="VM_PARAMETERS" value="-Djava.awt.headless=false" />
-    <option name="ALTERNATIVE_JRE_PATH" />
-    <option name="SHORTEN_COMMAND_LINE" value="NONE" />
-    <envs>
-      <env name="ENV" value="test" />
-    </envs>
+    <extension name="software.aws.toolkits.jetbrains.core.execution.JavaAwsConnectionExtension">
+      <option name="credential" />
+      <option name="region" />
+      <option name="useCurrentConnection" value="false" />
+    </extension>
     <method v="2">
       <option name="Make" enabled="true" />
     </method>
