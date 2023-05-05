@@ -16,7 +16,7 @@
         <mainClass>com.spscommerce.springboot.example.ExampleApplication</mainClass>
         <libs.dir.name>libs</libs.dir.name>
 
-        <sps-java-shared.version>5.13.0</sps-java-shared.version>
+        <sps-java-shared.version>5.16.4</sps-java-shared.version>
 
         <!-- SWAGGER -->
         <resource-package>com.spscommerce.springboot.example.controller</resource-package>
