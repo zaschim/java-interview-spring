@@ -1,4 +1,4 @@
-FROM eclipse-temurin:18.0.2.1_1-jre-alpine
+FROM eclipse-temurin:19.0.2_7-jre-alpine
 
 RUN mkdir -p /app
 WORKDIR /app
